@@ -256,14 +256,14 @@
   list.innerHTML = meetings.map((mt, i) => `
     <div class="event-row">
       <div class="event-date-block">
-        <span class="event-month">\${MONTHS_SHORT[mt.date.getMonth()]}</span>
-        <span class="event-day">\${mt.date.getDate()}</span>
+        <span class="event-month">${MONTHS_SHORT[mt.date.getMonth()]}</span>
+        <span class="event-day">${mt.date.getDate()}</span>
       </div>
       <div>
-        <div class="event-meta"><span class="event-tag tag-recurring">Monthly Meeting</span>\${i===0 ? '<span class="event-tag" style="background:rgba(196,162,74,0.15);color:var(--gold-light);">Next Up</span>' : ''}</div>
+        <div class="event-meta"><span class="event-tag tag-recurring">Monthly Meeting</span>${i===0 ? '<span class="event-tag" style="background:rgba(196,162,74,0.15);color:var(--gold-light);">Next Up</span>' : ''}</div>
         <div class="event-name">COS Monthly Member Meeting</div>
         <div class="event-detail">
-          \${mt.date.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})} &nbsp;·&nbsp; 7:00 PM<br>
+          ${mt.date.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})} &nbsp;·&nbsp; 7:00 PM<br>
           Westlake Village Town Hall<br>
           31200 Oak Crest Dr, Westlake Village, CA 91361
         </div>
