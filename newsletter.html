@@ -154,7 +154,7 @@
   <h2 class="section-title reveal">Most Recent Newsletter</h2>
   <p class="reveal" style="color:var(--text-dark-muted);max-width:58ch;line-height:1.8;margin-bottom:2rem;">Our newsletters are published monthly and distributed to all COS members. Each issue includes recaps of recent meetings, announcements for upcoming events, flower displays, member orchid photos, judging highlights, and featured speaker previews.</p>
   <div class="reveal" style="display:flex;gap:1rem;flex-wrap:wrap;">
-    <a href="https://drive.google.com/drive/folders/1LwHXRSPsm-ao4isespv8p_SWCdL4ennQ" target="_blank" class="btn-primary">View Latest Newsletter</a>
+    <a href="https://drive.google.com/drive/folders/1LwHXRSPsm-ao4isespv8p_SWCdL4ennQ" target="_blank" class="btn-primary newsletter-link"><span class="newsletter-label">View Latest Newsletter</span></a>
     <a href="https://drive.google.com/drive/folders/1LwHXRSPsm-ao4isespv8p_SWCdL4ennQ" target="_blank" class="btn-ghost">View Full Archive</a>
   </div>
 </section>
@@ -194,7 +194,7 @@
   <span class="section-label reveal">Archive</span>
   <h2 class="section-title reveal">Browse Past Issues</h2>
   <p class="reveal" style="color:var(--text-dark-muted);max-width:55ch;line-height:1.8;margin-bottom:2rem;">All past newsletters are available in our Google Drive archive. Members can browse and download any issue from our history.</p>
-  <a href="https://drive.google.com/drive/folders/1LwHXRSPsm-ao4isespv8p_SWCdL4ennQ" target="_blank" class="btn-primary reveal">Open Newsletter Archive →</a>
+  <a href="https://drive.google.com/drive/folders/1LwHXRSPsm-ao4isespv8p_SWCdL4ennQ" target="_blank" class="btn-primary reveal newsletter-link"><span class="newsletter-label">Open Newsletter Archive →</span></a>
 </section>
 
 <footer>
@@ -214,4 +214,17 @@
   const mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
   mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }));
+
+  // Fetch newsletter data
+  fetch('/_data/newsletter.json')
+    .then(r => r.json())
+    .then(data => {
+      document.querySelectorAll('.newsletter-link').forEach(el => {
+        el.href = data.url;
+      });
+      document.querySelectorAll('.newsletter-label').forEach(el => {
+        el.textContent = data.label;
+      });
+    })
+    .catch(() => {});
 </script></body></html>

@@ -177,25 +177,9 @@
 </section>
 
 <section class="section-dark" style="border-top:1px solid rgba(196,162,74,0.1);">
-  <span class="section-label reveal">Annual</span>
-  <h2 class="section-title reveal">Show &amp; Sale</h2>
-  <div class="reveal">
-    <div class="event-row" style="border-bottom:none;padding-top:0;">
-      <div class="event-date-block">
-        <span class="event-month">May</span>
-        <span class="event-day">30</span>
-      </div>
-      <div>
-        <div class="event-meta"><span class="event-tag tag-annual">Annual Event</span></div>
-        <div class="event-name">Annual COS Show &amp; Sale</div>
-        <div class="event-detail">
-          May 30–31, 2025 &nbsp;·&nbsp; 12:00 PM – 5:30 PM each day<br>
-          Newbury Park Branch Library<br><br>
-          The premier COS event of the year — a two-day show and sale featuring stunning orchid displays, judged specimens, and plants for purchase. Open to the public. Don't miss it.
-        </div>
-      </div>
-    </div>
-  </div>
+  <span class="section-label reveal">Annual &amp; Special</span>
+  <h2 class="section-title reveal">One-Time Events</h2>
+  <div id="oneTimeEvents" class="reveal"></div>
 </section>
 
 <section class="section-light" style="text-align:center;">
@@ -269,4 +253,39 @@
         </div>
       </div>
     </div>`).join('');
+
+  // Fetch one-time events (annual/special)
+  const MONTHS_S = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  fetch('/.netlify/functions/get-events')
+    .then(r => r.json())
+    .then(events => {
+      const filtered = events.filter(e => e.type === 'annual' || e.type === 'special');
+      const container = document.getElementById('oneTimeEvents');
+      if (!filtered.length) {
+        container.innerHTML = '<p style="color:var(--text-dark-muted);">No upcoming events at this time.</p>';
+        return;
+      }
+      const tagClass = { annual: 'tag-annual', special: 'tag-recurring' };
+      const tagLabel = { annual: 'Annual Event', special: 'Special Event' };
+      container.innerHTML = filtered.map(e => {
+        const d = new Date(e.date);
+        return `<div class="event-row">
+          <div class="event-date-block">
+            <span class="event-month">${MONTHS_S[d.getMonth()]}</span>
+            <span class="event-day">${d.getDate()}</span>
+          </div>
+          <div>
+            <div class="event-meta"><span class="event-tag ${tagClass[e.type] || ''}">${tagLabel[e.type] || e.type}</span></div>
+            <div class="event-name">${e.title}</div>
+            <div class="event-detail">
+              ${e.date}${e.time ? ' &nbsp;&middot;&nbsp; ' + e.time : ''}<br>
+              ${e.location || ''}${e.description ? '<br><br>' + e.description : ''}
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+    })
+    .catch(() => {
+      document.getElementById('oneTimeEvents').innerHTML = '<p style="color:var(--text-dark-muted);">No upcoming events at this time.</p>';
+    });
 </script></body></html>
