@@ -49,8 +49,8 @@ collections:
         required: false
       - label: "Time"
         name: "time"
-        widget: "string"
-        hint: "e.g. 7:00 PM"
+        widget: "text"
+        hint: "e.g. 7:00 PM or for multi-day: Day 1: 12–5 PM, Day 2: 10 AM–4 PM"
       - label: "Location"
         name: "location"
         widget: "string"
