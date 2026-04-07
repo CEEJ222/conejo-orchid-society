@@ -27,6 +27,8 @@ collections:
     folder: "_data/events"
     create: true
     slug: "{{slug}}"
+    extension: "json"
+    format: "json"
     label_singular: "Event"
     fields:
       - label: "Event Name"
