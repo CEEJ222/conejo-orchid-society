@@ -55,6 +55,5 @@ collections:
         name: "type"
         widget: "select"
         options:
-          - { label: "Monthly Meeting", value: "meeting" }
           - { label: "Annual Event", value: "annual" }
           - { label: "Special Event", value: "special" }
