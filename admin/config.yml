@@ -40,6 +40,13 @@ collections:
         format: "YYYY-MM-DD"
         date_format: "MMMM D, YYYY"
         time_format: false
+      - label: "End Date (for multi-day events)"
+        name: "endDate"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "MMMM D, YYYY"
+        time_format: false
+        required: false
       - label: "Time"
         name: "time"
         widget: "string"

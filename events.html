@@ -271,16 +271,23 @@
       const tagLabel = { annual: 'Annual Event', special: 'Special Event' };
       container.innerHTML = filtered.map(e => {
         const d = new Date(e.date);
+        const ed = e.endDate ? new Date(e.endDate) : null;
+        const dateStr = ed
+          ? d.toLocaleDateString('en-US',{month:'long',day:'numeric'}) + '–' + ed.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})
+          : d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+        const dayDisplay = ed
+          ? d.getDate() + '–' + ed.getDate()
+          : d.getDate();
         return `<div class="event-row">
           <div class="event-date-block">
             <span class="event-month">${MONTHS_S[d.getMonth()]}</span>
-            <span class="event-day">${d.getDate()}</span>
+            <span class="event-day">${dayDisplay}</span>
           </div>
           <div>
             <div class="event-meta"><span class="event-tag ${tagClass[e.type] || ''}">${tagLabel[e.type] || e.type}</span></div>
             <div class="event-name">${e.title}</div>
             <div class="event-detail">
-              ${e.date}${e.time ? ' &nbsp;&middot;&nbsp; ' + e.time : ''}<br>
+              ${dateStr}${e.time ? ' &nbsp;&middot;&nbsp; ' + e.time : ''}<br>
               ${e.location || ''}${e.description ? '<br><br>' + e.description : ''}
             </div>
           </div>
