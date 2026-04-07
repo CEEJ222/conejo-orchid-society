@@ -1,3 +1,7 @@
+[build]
+  command = "node build-events.js"
+  publish = "."
+
 # Clean URLs: serve *.html at /name; canonical redirects strip .html from the address bar.
 
 [[redirects]]
