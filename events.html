@@ -26,12 +26,12 @@
 
   /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 4rem; height: 72px; background: rgba(14,14,11,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(196,162,74,0.15); }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dark); text-decoration: none; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dark); text-decoration: none; white-space: nowrap; }
   .nav-logo span { color: var(--gold); }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a { color: var(--text-dark-muted); text-decoration: none; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.25s; }
   .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
-  .nav-cta { padding: 0.5rem 1.4rem; border: 1px solid var(--gold); color: var(--gold) !important; border-radius: 2px; transition: all 0.25s !important; }
+  .nav-cta { display: inline-block; padding: 0.5rem 1.4rem; border: 1px solid var(--gold); color: var(--gold) !important; border-radius: 2px; transition: all 0.25s !important; white-space: nowrap; text-align: center; }
   .nav-cta:hover { background: var(--gold) !important; color: var(--dark) !important; }
   .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
   .nav-hamburger span { display: block; width: 24px; height: 1px; background: var(--text-dark); transition: all 0.3s ease; }
@@ -52,11 +52,11 @@
 
   /* SHARED ELEMENTS */
   .section-label { font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: block; }
-  .btn-primary { padding: 0.85rem 2rem; background: var(--gold); color: var(--dark); border: none; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-radius: 2px; cursor: pointer; transition: all 0.25s; display: inline-block; }
+  .btn-primary { padding: 0.85rem 2rem; background: var(--gold); color: var(--dark); border: none; font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-radius: 2px; cursor: pointer; transition: all 0.25s; text-align: center; display: inline-block; }
   .btn-primary:hover { background: var(--gold-light); }
-  .btn-ghost { padding: 0.85rem 2rem; background: transparent; color: var(--text-dark-muted); border: 1px solid rgba(196,162,74,0.25); font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-radius: 2px; cursor: pointer; transition: all 0.25s; display: inline-block; }
+  .btn-ghost { padding: 0.85rem 2rem; background: transparent; color: var(--text-dark-muted); border: 1px solid rgba(196,162,74,0.25); font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-radius: 2px; cursor: pointer; transition: all 0.25s; text-align: center; display: inline-block; }
   .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-  .btn-dark { padding: 0.85rem 2rem; background: var(--dark); color: var(--light); border: 1px solid rgba(196,162,74,0.2); font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-radius: 2px; cursor: pointer; transition: all 0.25s; display: inline-block; }
+  .btn-dark { padding: 0.85rem 2rem; background: var(--dark); color: var(--light); border: 1px solid rgba(196,162,74,0.2); font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border-radius: 2px; cursor: pointer; transition: all 0.25s; text-align: center; display: inline-block; }
   .btn-dark:hover { border-color: var(--gold); color: var(--gold); }
 
   /* CONTENT SECTIONS */
@@ -102,23 +102,33 @@
   /* RESPONSIVE */
   @media (max-width: 1024px) {
     nav { padding: 0 2.5rem; }
+    .nav-links { gap: 1.25rem; }
     .page-hero { padding: 130px 3rem 4rem; }
     .section-dark, .section-surface, .section-light, .section-light-mid { padding: 4rem 3rem; }
-    footer { padding: 2.5rem 3rem; }
+    footer {
+      padding: 2.5rem 3rem;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 960px) {
     nav { padding: 0 1.5rem; }
     .nav-links { display: none; }
     .nav-hamburger { display: flex; }
+  }
+  @media (max-width: 768px) {
     .page-hero { padding: 110px 1.5rem 3rem; }
     .section-dark, .section-surface, .section-light, .section-light-mid { padding: 3rem 1.5rem; }
-    footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.5rem; }
-    .footer-links { flex-wrap: wrap; justify-content: center; }
+    footer { padding: 2rem 1.5rem; }
     .link-grid { grid-template-columns: 1fr; }
     .download-grid { grid-template-columns: 1fr; }
     .btn-primary, .btn-ghost, .btn-dark { width: 100%; text-align: center; }
   }
   @media (max-width: 480px) {
+    .nav-logo { font-size: 0.9rem; letter-spacing: 0.08em; }
     .page-hero h1 { font-size: clamp(2rem, 9vw, 2.8rem); }
   }
 </style>
@@ -185,10 +195,10 @@
 </section>
 
 <section class="section-light" style="text-align:center;">
-  <span class="section-label reveal">Stay Updated</span>
-  <h2 class="section-title reveal" style="color:var(--text-light);">Never Miss an Event</h2>
-  <p class="reveal" style="color:var(--text-light-muted);max-width:50ch;margin:0 auto 2rem;line-height:1.8;">Our monthly newsletter includes full details on upcoming events, speaker announcements, and any schedule changes.</p>
-  <a href="/newsletter" class="btn-dark reveal">Subscribe to Our Newsletter</a>
+  <span class="section-label reveal">Join the Society</span>
+  <h2 class="section-title reveal" style="color:var(--text-light);">Don't Miss an Event</h2>
+  <p class="reveal" style="color:var(--text-light-muted);max-width:52ch;margin:0 auto 2rem;line-height:1.8;">Members get our monthly newsletter with speaker details, schedule changes, and everything you need to stay connected to the COS community.</p>
+  <a href="/membership" class="btn-dark reveal">Become a Member</a>
 </section>
 
 <footer>
@@ -199,7 +209,7 @@
     <li><a href="/events">Events</a></li>
     <li><a href="/resources">Resources</a></li>
   </ul>
-  <span class="footer-copy">© 2025 Conejo Orchid Society. All rights reserved.</span>
+  <span class="footer-copy">© 2026 Conejo Orchid Society. All rights reserved.</span>
 </footer>
 <script>
   // Scroll reveal
