@@ -1,0 +1,58 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "newsletter"
+    label: "Newsletter"
+    files:
+      - label: "Latest Newsletter"
+        name: "newsletter"
+        file: "_data/newsletter.json"
+        fields:
+          - label: "Latest Newsletter URL"
+            name: "url"
+            widget: "string"
+            hint: "Paste the Google Drive link to the most recent newsletter here"
+          - label: "Issue Label"
+            name: "label"
+            widget: "string"
+            hint: "e.g. April 2026"
+
+  - name: "events"
+    label: "Events"
+    folder: "_data/events"
+    create: true
+    slug: "{{slug}}"
+    label_singular: "Event"
+    fields:
+      - label: "Event Name"
+        name: "title"
+        widget: "string"
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "MMMM D, YYYY"
+        time_format: false
+      - label: "Time"
+        name: "time"
+        widget: "string"
+        hint: "e.g. 7:00 PM"
+      - label: "Location"
+        name: "location"
+        widget: "string"
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
+      - label: "Event Type"
+        name: "type"
+        widget: "select"
+        options:
+          - { label: "Monthly Meeting", value: "meeting" }
+          - { label: "Annual Event", value: "annual" }
+          - { label: "Special Event", value: "special" }
