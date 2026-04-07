@@ -1,0 +1,46 @@
+# Clean URLs: serve *.html at /name; canonical redirects strip .html from the address bar.
+
+[[redirects]]
+  from = "/membership"
+  to = "/membership.html"
+  status = 200
+
+[[redirects]]
+  from = "/newsletter"
+  to = "/newsletter.html"
+  status = 200
+
+[[redirects]]
+  from = "/events"
+  to = "/events.html"
+  status = 200
+
+[[redirects]]
+  from = "/resources"
+  to = "/resources.html"
+  status = 200
+
+[[redirects]]
+  from = "/membership.html"
+  to = "/membership"
+  status = 301
+
+[[redirects]]
+  from = "/newsletter.html"
+  to = "/newsletter"
+  status = 301
+
+[[redirects]]
+  from = "/events.html"
+  to = "/events"
+  status = 301
+
+[[redirects]]
+  from = "/resources.html"
+  to = "/resources"
+  status = 301
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
