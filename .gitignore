@@ -1,0 +1,5 @@
+# Local Netlify folder
+.netlify
+
+# Accidental nested copy of this repo (canonical site + /downloads live at repo root)
+conejo-orchid-society/
