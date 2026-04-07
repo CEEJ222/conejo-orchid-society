@@ -136,7 +136,9 @@
   .event-name { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; color:var(--text-dark); margin-bottom:0.4rem; }
   .event-detail { font-size:0.83rem; color:var(--text-dark-muted); line-height:1.7; }
   .blackout-note { background:rgba(196,162,74,0.05); border:1px solid rgba(196,162,74,0.12); border-radius:3px; padding:1rem 1.4rem; margin-top:2rem; font-size:0.82rem; color:var(--text-dark-muted); }
-  @media(max-width:768px) { .event-row { grid-template-columns:70px 1fr; gap:1rem; } .event-day { font-size:2rem; } }
+  .events-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(196,162,74,0.1); border:1px solid rgba(196,162,74,0.1); border-radius:3px; overflow:hidden; }
+  .events-grid .event-row { background:var(--dark); border-bottom:none; padding:2rem; }
+  @media(max-width:768px) { .event-row { grid-template-columns:70px 1fr; gap:1rem; } .event-day { font-size:2rem; } .events-grid { grid-template-columns:1fr; } }
 </style></head><body><nav>
   <a href="/" class="nav-logo">Conejo <span>Orchid</span> Society</a>
   <ul class="nav-links">
@@ -167,7 +169,7 @@
 <section class="section-dark" style="border-top:1px solid rgba(196,162,74,0.1);">
   <span class="section-label reveal">Annual &amp; Special</span>
   <h2 class="section-title reveal">One-Time Events</h2>
-  <div id="oneTimeEvents" class="reveal"></div>
+  <div id="oneTimeEvents" class="events-grid reveal"></div>
 </section>
 
 <section class="section-surface">
