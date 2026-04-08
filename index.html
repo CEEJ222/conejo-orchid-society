@@ -498,7 +498,7 @@
     font-size: clamp(2rem, 3vw, 2.8rem);
     font-weight: 300;
     color: var(--text-dark);
-    margin-bottom: 0.65rem;
+    margin-bottom: 1.6rem;
     line-height: 1.2;
   }
 
@@ -576,12 +576,17 @@
     font-size: 0.72rem;
   }
 
-  .events-home-stack .event-upcoming {
-    margin-bottom: 0.55rem;
-    padding: 0.8rem 1rem;
-    gap: 0.85rem;
+  .events-home-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-bottom: 2rem;
   }
-  .events-home-stack .event-upcoming:last-child { margin-bottom: 1.15rem; }
+  .events-home-stack .event-upcoming {
+    margin-bottom: 0;
+    padding: 0.65rem 0.85rem;
+    gap: 0.75rem;
+  }
   .events-home-stack .event-info { padding-left: 0.85rem; }
 
   /* ─── SPLIT: MEMBERSHIP + RESOURCES ─── */
@@ -876,7 +881,7 @@
 
     .events-content > .section-label { margin-bottom: 0.85rem; }
 
-    .events-content h2 { margin-bottom: 0.55rem; }
+    .events-content h2 { margin-bottom: 1.35rem; }
 
     .events-content h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
 
@@ -891,11 +896,10 @@
     }
 
     .events-home-stack .event-upcoming {
-      padding: 0.85rem 0.95rem;
-      gap: 0.8rem;
-      margin-bottom: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      gap: 0.72rem;
+      margin-bottom: 0;
     }
-    .events-home-stack .event-upcoming:last-child { margin-bottom: 0.95rem; }
     .events-home-stack .event-info { padding-left: 0.8rem; }
     .event-date-block {
       flex-shrink: 0;
@@ -967,7 +971,8 @@
 
     .event-upcoming { padding: 1rem 0.95rem; gap: 0.85rem; }
 
-    .events-home-stack .event-upcoming { padding: 0.8rem 0.85rem; gap: 0.72rem; }
+    .events-home-stack { gap: 0.4rem; }
+    .events-home-stack .event-upcoming { padding: 0.6rem 0.8rem; gap: 0.65rem; }
 
     .event-day { font-size: 1.42rem; }
 
@@ -982,8 +987,8 @@
   <a href="/" class="nav-logo">Conejo <span>Orchid</span> Society</a>
   <ul class="nav-links">
     <li><a href="/membership">Membership</a></li>
-    <li><a href="/newsletter">Newsletters</a></li>
     <li><a href="/events">Events</a></li>
+    <li><a href="/newsletter">Newsletters</a></li>
     <li><a href="/resources">Resources</a></li>
     <li><a href="/membership" class="nav-cta">Join COS</a></li>
   </ul>
@@ -994,8 +999,8 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="/membership">Membership</a>
-  <a href="/newsletter">Newsletters</a>
   <a href="/events">Events</a>
+  <a href="/newsletter">Newsletters</a>
   <a href="/resources">Resources</a>
   <a href="/membership">Join COS</a>
 </div>
@@ -1031,32 +1036,9 @@
     <span class="section-label reveal">On the Calendar</span>
     <h2 class="reveal">Join Us at Our<br>Next Gathering</h2>
 
-    <div class="events-home-stack">
-      <div id="home-one-time-events"></div>
-      <div id="home-next-meeting" class="event-upcoming reveal"></div>
-    </div>
+    <div class="events-home-stack" id="home-calendar-events"></div>
     <p class="reveal">We gather the second Monday of every month — bring your blooming plants for display and judging, connect with fellow growers, hear from guest speakers, and take your chances in our plant raffle. Meetings are held at Westlake Village Town Hall at 7 PM. <em style="color:var(--text-dark-muted);font-style:italic;font-size:0.85em;">No meetings in August or December.</em></p>
     <a href="/events" class="btn-primary reveal">View Events</a>
-  </div>
-</section>
-
-
-<!-- NEWSLETTER -->
-<section class="newsletter">
-  <div class="newsletter-graphic reveal">
-    <span class="newsletter-issue">Monthly Newsletter</span>
-    <div class="newsletter-divider"></div>
-    <div class="newsletter-title-mock">The COS<br>Newsletter</div>
-    <div class="newsletter-divider"></div>
-    <div class="newsletter-preview-lines">
-      <span></span><span></span><span></span><span></span>
-    </div>
-  </div>
-  <div class="newsletter-text">
-    <span class="section-label">Stay in the Know</span>
-    <h2>Monthly insights from the orchid community</h2>
-    <p>Each month, our newsletter brings you recaps of recent meetings, upcoming events, flower displays, member orchid photos, judging results, and featured speaker announcements — everything happening in the COS community, delivered to your inbox.</p>
-    <a href="/newsletter" class="btn-dark">View Newsletter</a>
   </div>
 </section>
 
@@ -1078,6 +1060,25 @@
   </div>
 </section>
 
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter-graphic reveal">
+    <span class="newsletter-issue">Monthly Newsletter</span>
+    <div class="newsletter-divider"></div>
+    <div class="newsletter-title-mock">The COS<br>Newsletter</div>
+    <div class="newsletter-divider"></div>
+    <div class="newsletter-preview-lines">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="newsletter-text">
+    <span class="section-label">Stay in the Know</span>
+    <h2>Monthly insights from the orchid community</h2>
+    <p>Each month, our newsletter brings you recaps of recent meetings, upcoming events, flower displays, member orchid photos, judging results, and featured speaker announcements — everything happening in the COS community, delivered to your inbox.</p>
+    <a href="/newsletter" class="btn-dark">View Newsletter</a>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">Conejo Orchid Society</span>
@@ -1086,6 +1087,7 @@
     <li><a href="/newsletter">Newsletter</a></li>
     <li><a href="/events">Events</a></li>
     <li><a href="/resources">Resources</a></li>
+    <li><a href="https://www.facebook.com/ConejoOrchidSociety/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
   </ul>
   <span class="footer-copy">© 2026 Conejo Orchid Society. All rights reserved.</span>
 </footer>
@@ -1154,18 +1156,23 @@
     if (!parts.length) return '';
     return `<div class="event-detail">${parts.map((s, i) => `<span class="event-detail-line${i > 0 ? ' event-detail-line--secondary' : ''}">${s}</span>`).join('')}</div>`;
   }
-  function homeFillEventCard(root, title, date, metaLines) {
+  function homeCalendarSortKey(d) {
+    return new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+  }
+  function homeSimpleEventCardHtml(title, date, metaLines) {
     const monthLabel = date.toLocaleDateString('en-US', { month: 'long' });
     const dayNum = date.getDate();
     const lines = Array.isArray(metaLines) ? metaLines : [metaLines];
-    root.innerHTML = `
-      <div class="event-date-block">
-        <span class="event-month">${monthLabel}</span>
-        <span class="event-day">${dayNum}</span>
-      </div>
-      <div class="event-info">
-        <div class="event-name">${title}</div>
-        ${homeEventDetailHtml(lines)}
+    return `
+      <div class="event-upcoming reveal">
+        <div class="event-date-block">
+          <span class="event-month">${monthLabel}</span>
+          <span class="event-day">${dayNum}</span>
+        </div>
+        <div class="event-info">
+          <div class="event-name">${title}</div>
+          ${homeEventDetailHtml(lines)}
+        </div>
       </div>`;
   }
   function homeOneTimeEventCardHtml(e, start) {
@@ -1188,33 +1195,43 @@
         </div>
       </div>`;
   }
-  const homeMeetEl = document.getElementById('home-next-meeting');
-  const homeOneTimeRoot = document.getElementById('home-one-time-events');
-  const homeMeet = homeNextMonthlyMeeting();
-  homeFillEventCard(
-    homeMeetEl,
-    'Monthly Member Meeting',
-    homeMeet,
-    homeEventMetaLines('Westlake Village Town Hall', '7:00 PM')
-  );
+  function homeBuildCalendarItems(oneTimePairs) {
+    const today = homeStartOfToday();
+    const meet = homeNextMonthlyMeeting();
+    const items = [{
+      sort: homeCalendarSortKey(meet),
+      html: homeSimpleEventCardHtml(
+        'Monthly Member Meeting',
+        meet,
+        homeEventMetaLines('Westlake Village Town Hall', '7:00 PM')
+      )
+    }];
+    oneTimePairs.forEach(({ e, start }) => {
+      const end = e.endDate ? new Date(e.endDate + 'T12:00:00') : start;
+      if (end >= today) {
+        items.push({
+          sort: homeCalendarSortKey(start),
+          html: homeOneTimeEventCardHtml(e, start)
+        });
+      }
+    });
+    items.sort((a, b) => a.sort - b.sort);
+    return items;
+  }
+  function homeRenderCalendar(items, root) {
+    root.innerHTML = items.map(x => x.html).join('');
+    root.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
+  const homeCalendarRoot = document.getElementById('home-calendar-events');
+  homeRenderCalendar(homeBuildCalendarItems([]), homeCalendarRoot);
+
   fetch('/_data/events.json')
     .then(r => r.json())
     .then(events => {
-      const today = homeStartOfToday();
-      const candidates = events
+      const pairs = events
         .filter(e => e.type === 'annual' || e.type === 'special')
-        .map(e => {
-          const start = new Date(e.date + 'T12:00:00');
-          const end = e.endDate ? new Date(e.endDate + 'T12:00:00') : start;
-          return { e, start, end };
-        })
-        .filter(x => x.end >= today)
-        .sort((a, b) => a.start - b.start);
-      if (!candidates.length) return;
-      homeOneTimeRoot.innerHTML = candidates
-        .map(({ e, start }) => homeOneTimeEventCardHtml(e, start))
-        .join('');
-      homeOneTimeRoot.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        .map(e => ({ e, start: new Date(e.date + 'T12:00:00') }));
+      homeRenderCalendar(homeBuildCalendarItems(pairs), homeCalendarRoot);
     })
     .catch(() => {});
 </script>
