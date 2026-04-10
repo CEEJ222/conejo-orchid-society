@@ -681,6 +681,34 @@
 
   .footer-links a:hover { color: var(--gold); }
 
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+    text-align: right;
+  }
+
+  .footer-attribution {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-dark-muted);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-attribution:hover { color: var(--gold); }
+
+  .footer-attribution-rabbit {
+    display: inline-block;
+    width: 0.95em;
+    height: 0.95em;
+    vertical-align: -0.14em;
+    margin-left: 0.18em;
+    flex-shrink: 0;
+  }
+
   /* ─── ANIMATIONS ─── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(18px); }
@@ -788,6 +816,11 @@
       align-items: center;
       text-align: center;
       gap: 1.5rem;
+    }
+
+    .footer-col {
+      align-items: center;
+      text-align: center;
     }
 
     .footer-links { flex-wrap: wrap; justify-content: center; gap: 1.2rem; }
@@ -1037,7 +1070,7 @@
     <h2 class="reveal">Join Us at Our<br>Next Gathering</h2>
 
     <div class="events-home-stack" id="home-calendar-events"></div>
-    <p class="reveal">We gather the second Monday of every month — bring your blooming plants for display and judging, connect with fellow growers, hear from guest speakers, and take your chances in our plant raffle. Meetings are held at Westlake Village Town Hall at 7 PM. <em style="color:var(--text-dark-muted);font-style:italic;font-size:0.85em;">No meetings in August or December.</em></p>
+    <p class="reveal">We gather the second Monday of every month — bring your blooming plants for display and judging, connect with fellow growers, and hear from guest speakers. Meetings are held at Westlake Village Town Hall at 7 PM. <em style="color:var(--text-dark-muted);font-style:italic;font-size:0.85em;">No meetings in August or December.</em></p>
     <a href="/events" class="btn-primary reveal">View Events</a>
   </div>
 </section>
@@ -1089,7 +1122,10 @@
     <li><a href="/resources">Resources</a></li>
     <li><a href="https://www.facebook.com/ConejoOrchidSociety/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
   </ul>
-  <span class="footer-copy">© 2026 Conejo Orchid Society. All rights reserved.</span>
+  <div class="footer-col">
+    <span class="footer-copy">© 2026 Conejo Orchid Society. All rights reserved.</span>
+    <a href="https://www.cjbritz.com" target="_blank" rel="noopener" class="footer-attribution">Designed and developed in Los Angeles (for the Conejo Valley<svg class="footer-attribution-rabbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><ellipse cx="11" cy="7" rx="3.2" ry="8" transform="rotate(-16 11 7)"/><ellipse cx="21" cy="7" rx="3.2" ry="8" transform="rotate(16 21 7)"/><circle cx="16" cy="18" r="9"/></svg>)</a>
+  </div>
 </footer>
 
 <script>

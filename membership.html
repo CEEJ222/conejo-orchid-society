@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Membership | Conejo Orchid Society</title>
-<meta name="description" content="Become a member of the Conejo Orchid Society. Enjoy monthly meetings, plant judging, guest speakers, a plant raffle, newsletter access, and exclusive member discounts.">
+<meta name="description" content="Become a member of the Conejo Orchid Society. Enjoy monthly meetings, plant judging, guest speakers, newsletter access, and exclusive member discounts.">
 <meta name="keywords" content="Conejo Orchid Society, orchid membership, join orchid society, Ventura County, Westlake Village orchids, plant judging, orchid club">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://conejoorchidsociety.org/membership">
 <meta property="og:title" content="Membership | Conejo Orchid Society">
-<meta property="og:description" content="Become a member of the Conejo Orchid Society. Enjoy monthly meetings, plant judging, guest speakers, a plant raffle, newsletter access, and exclusive member discounts.">
+<meta property="og:description" content="Become a member of the Conejo Orchid Society. Enjoy monthly meetings, plant judging, guest speakers, newsletter access, and exclusive member discounts.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://conejoorchidsociety.org/membership">
 <meta property="og:image" content="https://conejoorchidsociety.org/images/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Membership | Conejo Orchid Society">
-<meta name="twitter:description" content="Become a member of the Conejo Orchid Society. Enjoy monthly meetings, plant judging, guest speakers, a plant raffle, newsletter access, and exclusive member discounts.">
+<meta name="twitter:description" content="Become a member of the Conejo Orchid Society. Enjoy monthly meetings, plant judging, guest speakers, newsletter access, and exclusive member discounts.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -112,6 +112,34 @@
   .footer-links a { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dark-muted); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--gold); }
 
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+    text-align: right;
+  }
+
+  .footer-attribution {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-dark-muted);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-attribution:hover { color: var(--gold); }
+
+  .footer-attribution-rabbit {
+    display: inline-block;
+    width: 0.95em;
+    height: 0.95em;
+    vertical-align: -0.14em;
+    margin-left: 0.18em;
+    flex-shrink: 0;
+  }
+
   /* REVEAL */
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -129,6 +157,7 @@
       text-align: center;
       gap: 1.5rem;
     }
+    .footer-col { align-items: center; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
   }
   @media (max-width: 960px) {
@@ -204,11 +233,6 @@
     </div>
     <div class="download-card" style="flex-direction:column;gap:0.5rem;">
       <div style="color:var(--gold);font-size:1.3rem;">✦</div>
-      <div class="download-title">Plant Raffle</div>
-      <div style="font-size:0.83rem;color:var(--text-dark-muted);">Take home something beautiful — every meeting features a raffle of orchid plants.</div>
-    </div>
-    <div class="download-card" style="flex-direction:column;gap:0.5rem;">
-      <div style="color:var(--gold);font-size:1.3rem;">✦</div>
       <div class="download-title">Refreshments</div>
       <div style="font-size:0.83rem;color:var(--text-dark-muted);">Light refreshments served at each meeting.</div>
     </div>
@@ -224,24 +248,12 @@
       <div style="font-size:0.83rem;color:var(--text-light-muted);">Access to bulk purchases of discounted orchid supplies available only to members.</div>
     </div>
     <div class="download-card" style="background:var(--light-mid);border-color:rgba(100,80,40,0.15);flex-direction:column;gap:0.4rem;">
-      <div class="download-title" style="color:var(--text-light);">Nursery Discounts</div>
-      <div style="font-size:0.83rem;color:var(--text-light-muted);">Discounts at local nurseries for COS members.</div>
-    </div>
-    <div class="download-card" style="background:var(--light-mid);border-color:rgba(100,80,40,0.15);flex-direction:column;gap:0.4rem;">
       <div class="download-title" style="color:var(--text-light);">Event Admission</div>
       <div style="font-size:0.83rem;color:var(--text-light-muted);">Discounted and free admission to COS events and shows.</div>
     </div>
     <div class="download-card" style="background:var(--light-mid);border-color:rgba(100,80,40,0.15);flex-direction:column;gap:0.4rem;">
       <div class="download-title" style="color:var(--text-light);">Monthly Newsletter</div>
       <div style="font-size:0.83rem;color:var(--text-light-muted);">Receive our monthly newsletter packed with culture tips, event recaps, and society news.</div>
-    </div>
-    <div class="download-card" style="background:var(--light-mid);border-color:rgba(100,80,40,0.15);flex-direction:column;gap:0.4rem;">
-      <div class="download-title" style="color:var(--text-light);">Zoom Speaker Sessions</div>
-      <div style="font-size:0.83rem;color:var(--text-light-muted);">Access to live Zoom presentations and culture sessions from expert speakers.</div>
-    </div>
-    <div class="download-card" style="background:var(--light-mid);border-color:rgba(100,80,40,0.15);flex-direction:column;gap:0.4rem;">
-      <div class="download-title" style="color:var(--text-light);">Recorded Session Archive</div>
-      <div style="font-size:0.83rem;color:var(--text-light-muted);">Access to all previously recorded Zoom sessions, available on demand.</div>
     </div>
   </div>
 </section>
@@ -289,9 +301,12 @@
     <li><a href="/newsletter">Newsletter</a></li>
     <li><a href="/events">Events</a></li>
     <li><a href="/resources">Resources</a></li>
-    <li><a href="https://www.facebook.com/ConejoOrchidSociety/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      <li><a href="https://www.facebook.com/ConejoOrchidSociety/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
   </ul>
-  <span class="footer-copy">© 2026 Conejo Orchid Society. All rights reserved.</span>
+  <div class="footer-col">
+    <span class="footer-copy">© 2026 Conejo Orchid Society. All rights reserved.</span>
+    <a href="https://www.cjbritz.com" target="_blank" rel="noopener" class="footer-attribution">Designed and developed in Los Angeles (for the Conejo Valley<svg class="footer-attribution-rabbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><ellipse cx="11" cy="7" rx="3.2" ry="8" transform="rotate(-16 11 7)"/><ellipse cx="21" cy="7" rx="3.2" ry="8" transform="rotate(16 21 7)"/><circle cx="16" cy="18" r="9"/></svg>)</a>
+  </div>
 </footer><script>
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((e) => e.forEach(el => { if(el.isIntersecting) el.target.classList.add('visible'); }), { threshold: 0.1 });

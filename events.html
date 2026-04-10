@@ -109,6 +109,34 @@
   .footer-links a { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dark-muted); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--gold); }
 
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+    text-align: right;
+  }
+
+  .footer-attribution {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--text-dark-muted);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-attribution:hover { color: var(--gold); }
+
+  .footer-attribution-rabbit {
+    display: inline-block;
+    width: 0.95em;
+    height: 0.95em;
+    vertical-align: -0.14em;
+    margin-left: 0.18em;
+    flex-shrink: 0;
+  }
+
   /* REVEAL */
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -126,6 +154,7 @@
       text-align: center;
       gap: 1.5rem;
     }
+    .footer-col { align-items: center; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
   }
   @media (max-width: 960px) {
@@ -224,7 +253,10 @@
     <li><a href="/resources">Resources</a></li>
     <li><a href="https://www.facebook.com/ConejoOrchidSociety/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
   </ul>
-  <span class="footer-copy">© 2026 Conejo Orchid Society. All rights reserved.</span>
+  <div class="footer-col">
+    <span class="footer-copy">© 2026 Conejo Orchid Society. All rights reserved.</span>
+    <a href="https://www.cjbritz.com" target="_blank" rel="noopener" class="footer-attribution">Designed and developed in Los Angeles (for the Conejo Valley<svg class="footer-attribution-rabbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><ellipse cx="11" cy="7" rx="3.2" ry="8" transform="rotate(-16 11 7)"/><ellipse cx="21" cy="7" rx="3.2" ry="8" transform="rotate(16 21 7)"/><circle cx="16" cy="18" r="9"/></svg>)</a>
+  </div>
 </footer>
 <script>
   // Scroll reveal

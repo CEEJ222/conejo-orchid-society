@@ -89,9 +89,13 @@
   .footer-links{display:flex;gap:2rem;list-style:none}
   .footer-links a{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dark-muted);text-decoration:none;transition:color 0.2s}
   .footer-links a:hover{color:var(--gold)}
+  .footer-col{display:flex;flex-direction:column;align-items:flex-end;gap:0.35rem;text-align:right}
+  .footer-attribution{font-size:0.75rem;font-weight:400;color:var(--text-dark-muted);letter-spacing:0.05em;text-decoration:none;transition:color 0.2s}
+  .footer-attribution:hover{color:var(--gold)}
+  .footer-attribution-rabbit{display:inline-block;width:0.95em;height:0.95em;vertical-align:-0.14em;margin-left:0.18em;flex-shrink:0}
   .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
   .reveal.visible{opacity:1;transform:translateY(0)}
-  @media(max-width:1024px){.nav-links{gap:1.25rem}footer{flex-direction:column;align-items:center;text-align:center;gap:1.5rem;padding:2.5rem 3rem}.footer-links{flex-wrap:wrap;justify-content:center}}
+  @media(max-width:1024px){.nav-links{gap:1.25rem}footer{flex-direction:column;align-items:center;text-align:center;gap:1.5rem;padding:2.5rem 3rem}.footer-col{align-items:center;text-align:center}.footer-links{flex-wrap:wrap;justify-content:center}}
   @media(max-width:960px){nav{padding:0 1.5rem}.nav-links{display:none}.nav-hamburger{display:flex}}
   @media(max-width:768px){.page-banner{padding:5.5rem 1.5rem 3rem}.resources-section,.downloads-section,.societies-section{padding:3.5rem 1.5rem}.link-grid,.societies-grid{grid-template-columns:1fr}.download-row{flex-direction:column;align-items:flex-start;gap:0.75rem}footer{padding:2.5rem 1.5rem}}
   @media(max-width:480px){.nav-logo{font-size:0.9rem;letter-spacing:0.08em}}
@@ -133,7 +137,6 @@
       <a href="http://www.orchidspecies.com" target="_blank" class="link-card"><span class="link-card-name">Orchid Photo Encyclopedia</span><span class="link-card-arrow">↗</span></a>
       <a href="http://orchidroots.com/" target="_blank" class="link-card"><span class="link-card-name">Orchid Roots</span><span class="link-card-arrow">↗</span></a>
       <a href="http://www.staugorchidsociety.org/culture-monthly-sue.htm" target="_blank" class="link-card"><span class="link-card-name">St. Augustine Society Articles</span><span class="link-card-arrow">↗</span></a>
-      <a href="https://orchid.unibas.ch/index.php/en/" target="_blank" class="link-card"><span class="link-card-name">Swiss Orchid Foundation</span><span class="link-card-arrow">↗</span></a>
     </div>
   </div>
 
@@ -145,7 +148,6 @@
       <a href="http://www.andysorchids.com" target="_blank" class="link-card"><span class="link-card-name">Andy's Orchids</span><span class="link-card-arrow">↗</span></a>
       <a href="http://www.calorchid.com" target="_blank" class="link-card"><span class="link-card-name">Cal-Orchid</span><span class="link-card-arrow">↗</span></a>
       <a href="http://www.diamondorchids.com" target="_blank" class="link-card"><span class="link-card-name">Diamond Orchids</span><span class="link-card-arrow">↗</span></a>
-      <a href="http://www.flori-culture.com" target="_blank" class="link-card"><span class="link-card-name">Flori-Culture</span><span class="link-card-arrow">↗</span></a>
       <a href="http://www.kkorchid.com" target="_blank" class="link-card"><span class="link-card-name">Kelly's Korner</span><span class="link-card-arrow">↗</span></a>
       <a href="http://www.greenhousemegastore.com" target="_blank" class="link-card"><span class="link-card-name">Greenhouse Megastore</span><span class="link-card-arrow">↗</span></a>
       <a href="http://www.orchids.com" target="_blank" class="link-card"><span class="link-card-name">Norman's Orchids</span><span class="link-card-arrow">↗</span></a>
@@ -224,7 +226,10 @@
     <li><a href="/events">Events</a></li><li><a href="/resources">Resources</a></li>
     <li><a href="https://www.facebook.com/ConejoOrchidSociety/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
   </ul>
-  <span class="footer-copy">© 2026 Conejo Orchid Society. All rights reserved.</span>
+  <div class="footer-col">
+    <span class="footer-copy">© 2026 Conejo Orchid Society. All rights reserved.</span>
+    <a href="https://www.cjbritz.com" target="_blank" rel="noopener" class="footer-attribution">Designed and developed in Los Angeles (for the Conejo Valley<svg class="footer-attribution-rabbit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><ellipse cx="11" cy="7" rx="3.2" ry="8" transform="rotate(-16 11 7)"/><ellipse cx="21" cy="7" rx="3.2" ry="8" transform="rotate(16 21 7)"/><circle cx="16" cy="18" r="9"/></svg>)</a>
+  </div>
 </footer>
 <script>
   const o=new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting)el.target.classList.add("visible")}),{threshold:0.1});
