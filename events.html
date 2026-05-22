@@ -327,8 +327,8 @@
       const tagClass = { annual: 'tag-annual', special: 'tag-recurring' };
       const tagLabel = { annual: 'Annual Event', special: 'Special Event' };
       container.innerHTML = filtered.map(e => {
-        const d = new Date(e.date);
-        const ed = e.endDate ? new Date(e.endDate) : null;
+        const d = new Date(e.date + 'T12:00:00');
+        const ed = e.endDate ? new Date(e.endDate + 'T12:00:00') : null;
         const dateStr = ed
           ? d.toLocaleDateString('en-US',{month:'long',day:'numeric'}) + '–' + ed.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})
           : d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
