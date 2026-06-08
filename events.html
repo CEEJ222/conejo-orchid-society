@@ -315,7 +315,7 @@
 
   // Fetch one-time events (annual/special)
   const MONTHS_S = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  fetch('/_data/events.json')
+  fetch('/_data/events.json?t=' + Date.now(), { cache: 'no-store' })
     .then(r => r.json())
     .then(events => {
       const filtered = events.filter(e => e.type === 'annual' || e.type === 'special');
