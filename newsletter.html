@@ -272,8 +272,8 @@
   hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
   mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }));
 
-  // Fetch newsletter data
-  fetch('/_data/newsletter.json')
+  // Fetch newsletter data (cache-busted so backend updates appear immediately)
+  fetch('/_data/newsletter.json?t=' + Date.now(), { cache: 'no-store' })
     .then(r => r.json())
     .then(data => {
       document.querySelectorAll('.newsletter-link').forEach(el => {

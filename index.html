@@ -1261,7 +1261,7 @@
   const homeCalendarRoot = document.getElementById('home-calendar-events');
   homeRenderCalendar(homeBuildCalendarItems([]), homeCalendarRoot);
 
-  fetch('/_data/events.json')
+  fetch('/_data/events.json?t=' + Date.now(), { cache: 'no-store' })
     .then(r => r.json())
     .then(events => {
       const pairs = events
