@@ -233,7 +233,7 @@
   <div id="meetingsList" class="reveal"></div>
 
   <div class="blackout-note reveal">
-    ⚬ &nbsp;<strong style="color:var(--text-dark);">No meetings in August or December.</strong> The society takes a break during these months. Check back in September and January for the next scheduled gatherings.
+    ⚬ &nbsp;<strong style="color:var(--text-dark);">No meetings in August, November, or December.</strong> The society takes a break during these months. Check back in September and January for the next scheduled gatherings.
   </div>
 </section>
 
@@ -269,7 +269,7 @@
   mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }));
 
   // Dynamic next meetings
-  const BLACKOUT = [8, 12];
+  const BLACKOUT = [8, 11, 12];
   const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   const MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
@@ -287,7 +287,7 @@
     while (results.length < count) {
       if (!BLACKOUT.includes(m)) {
         const sm = secondMonday(y, m);
-        if (sm >= today || results.length === 0) results.push({ date: sm, month: m, year: y });
+        if (sm >= today) results.push({ date: sm, month: m, year: y });
       }
       m++; if (m > 12) { m = 1; y++; }
     }
